@@ -1,5 +1,7 @@
 <?php
 
+require 'admin.php';
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -34,25 +36,6 @@ Route::get('/register', function(){
     return view('frontend.pages.register');
 });
 
-Route::get('/admin', function(){
-    return view('admin.dashboard.index');
-});
-
-Route::get('/dashboard2', function(){
-    return view('admin.dashboard.index2');
-});
-
-Route::get('/calendar', function(){
-    return view('admin.dashboard.calendar');
-});
-
-Route::get('/page-error', function(){
-    return view('admin.dashboard.page-error');
-});
-
-Route::get('/invoice', function(){
-    return view('admin.dashboard.invoice');
-});
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
