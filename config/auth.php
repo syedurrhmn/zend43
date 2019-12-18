@@ -56,6 +56,17 @@ return [
             'provider' => 'admins',
             'hash' => false,
         ],
+
+        'hrms' => [
+            'driver' => 'session',
+            'provider' => 'hrms',
+        ],
+        
+        'hrms-api' => [
+            'driver' => 'token',
+            'provider' => 'hrms',
+            'hash' => false,
+        ],
     ],
 
     /*
@@ -84,6 +95,11 @@ return [
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\Models\Admin::class,
+        ],
+
+        'hrms' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\hrms::class,
         ],
         
         // 'users' => [
@@ -115,6 +131,12 @@ return [
             'throttle' => 60,
         ],
         'admin' => [
+            'provider' => 'users',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],
+        'hrms' => [
             'provider' => 'users',
             'table' => 'password_resets',
             'expire' => 60,

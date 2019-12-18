@@ -23,6 +23,11 @@ class RedirectIfAuthenticated
                 return redirect('/admin');
             }
             break;
+            case 'hrms':
+                if (Auth::guard($guard)->check()) {
+                    return redirect('/hrms');
+                }
+                break;            
         default:
             if (Auth::guard($guard)->check()) {
                 return redirect('/');
